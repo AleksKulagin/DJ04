@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Film</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'create_film' %}">Create Film</a> |
+        <a href="{% url 'film_list' %}">Film List</a>
+    </nav>
+    <h1>Create Film</h1>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Add Film</button>
+    </form>
+</body>
+</html>

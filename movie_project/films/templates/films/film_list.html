@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Film List</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'create_film' %}">Create Film</a> |
+        <a href="{% url 'film_list' %}">Film List</a>
+    </nav>
+    <h1>Film List</h1>
+    <ul>
+        {% for film in films %}
+            <li>
+                <strong>{{ film.title }}</strong><br>
+                {{ film.description }}<br>
+                {{ film.review }}
+            </li>
+        {% empty %}
+            <li>No films available.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
